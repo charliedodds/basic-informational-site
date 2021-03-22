@@ -14,7 +14,7 @@ http
 				res.write(data);
 				return res.end();
 			});
-		} else if (req.url === '/about' || req.url === '/contact-me') {
+		} else if (req.url === '/about.html' || req.url === '/contact-me.html') {
 			const q = url.parse(req.url, true);
 			const filename = '.' + q.pathname;
 			fs.readFile(filename, (err, data) => {
