@@ -15,6 +15,7 @@ http
 				return res.end();
 			});
 		} else if (req.url === '/about' || req.url === '/contact-me') {
+			const q = url.parse(req.url, true);
 			const filename = '.' + q.pathname;
 			fs.readFile(filename, (err, data) => {
 				if (err) {
