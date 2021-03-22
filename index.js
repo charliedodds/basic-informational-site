@@ -5,7 +5,7 @@ const fs = require('fs');
 http
 	.createServer((req, res) => {
 		if (req.url === '/') {
-			res.write('index.html', (err, data) => {
+			fs.readFile('index.html', (err, data) => {
 				if (err) {
 					res.writeHead(404, { 'Content-Type': 'text/html' });
 					return res.end('404: Not Found');
