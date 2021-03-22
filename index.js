@@ -26,6 +26,9 @@ http
 				res.write(data);
 				return res.end();
 			});
+		} else {
+			res.writeHead(404, { 'Content-Type': 'text/html' });
+			return res.end('404: Not Found');
 		}
 	})
 	.listen(8080);
